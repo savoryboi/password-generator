@@ -4,7 +4,8 @@ var generateBtn = document.querySelector("#generate");
 
 const numbers = '1234567890';
 const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const lowercase = 'abcdefghijklmnopqrstuvwxyz'
+const lowercase = 'abcdefghijklmnopqrstuvwxyz';
+const specialCharacters = '!@#$%^&*()_+{}><?+-//[]~';
 
 function generatePassword() {
   var length = prompt('type a passsword length between 8 and 128 characters:');
@@ -16,7 +17,6 @@ function generatePassword() {
   var wantsUppercase = confirm('Presss OK if you would like uppercase letters');
   var wantsLowercase = confirm('Press OK for lowercase letters.');
   var wantsSpecialCharacters = confirm('Press OK for special characters.')
-  var specialCharacters = '!@#$%^&*()_+{}><?+-//[]~';
   var wantsNumbs = confirm('Press OK if you would like numbers.')
   var passPool  = '';
   
