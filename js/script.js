@@ -22,7 +22,7 @@ function generatePassword() {
 
   // adding chosen characters to the pool of characters to pull from
 
-  
+  // if false then do not add those characters to the passPool
   if(wantsUppercase){
     passPool += uppercase;
   } else {
@@ -52,8 +52,6 @@ let passwordResult ='';
   for(var i = 0; i < length; i++){
     passwordResult += passPool[Math.floor(Math.random() * (85-1) +1)];
   }
-
-  // var passwordEl = document.querySelector('#password');
   
   return passwordResult;
 }
@@ -63,13 +61,15 @@ let passwordResult ='';
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  console.log(password);
   passwordText.value = password;
 
 }
 // call writePassword function to print password in text box
-writePassword()
+
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", generatePassword);
+generateBtn.addEventListener("click", writePassword);
+
+
 
