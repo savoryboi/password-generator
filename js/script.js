@@ -41,6 +41,11 @@ function generatePassword() {
     passPool += numbers;
   }
 
+  // validate one character type has been selected
+  if(wantsUppercase === false && wantsLowercase === false && wantsSpecialCharacters === false && wantsNumbs === false){
+    alert('You must select at least one character type, please cick the button and try again.');
+  }
+
   // select characters from pool and assign to passwordResult until length is reached
 let passwordResult ='';
   for(var i = 0; i < length; i++){
