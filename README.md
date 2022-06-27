@@ -2,13 +2,13 @@
 
 ## What I did
 
-```
+
 In order to generate a random password, I used the function generatePassword to prompt the viewer with criteria for their new password they would or would not like, and took their answers to create a pool of characters to pull from. 
 
 The function then creates a password result, selecting a new character from the pool of accepted characters, using a for loop to repeat this process until the user's desired length is reached.
 
 check out the deployed application [here](link to deployed app)
-```
+
 
 ## User Story
 
