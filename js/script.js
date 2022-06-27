@@ -43,7 +43,7 @@ function generatePassword() {
 
   // validate one character type has been selected
   if(wantsUppercase === false && wantsLowercase === false && wantsSpecialCharacters === false && wantsNumbs === false){
-    alert('You must select at least one character type, please cick the button and try again.');
+    var errorMsg = alert('You must select at least one character type, please cick the button and try again.');
   }
 
   // select characters from pool and assign to passwordResult until length is reached
@@ -60,7 +60,6 @@ let passwordResult ='';
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  console.log(password);
   passwordText.value = password;
 
 }
