@@ -8,6 +8,7 @@ const lowercase = 'abcdefghijklmnopqrstuvwxyz'
 
 function generatePassword() {
   var length = prompt('type a passsword length between 8 and 128 characters:');
+  // validate length is acceptable
   if(length < 8 || length > 128){
     alert('Please type a numerical value between 8 and 128.');
     var length = prompt('type a passsword length between 8 and 128 characters:');
@@ -18,39 +19,32 @@ function generatePassword() {
   var specialCharacters = '!@#$%^&*()_+{}><?+-//[]~';
   var wantsNumbs = confirm('Press OK if you would like numbers.')
   var passPool  = '';
+  
+  // convert value of length to an integer
   length = Number(length);
 
   // adding chosen characters to the pool of characters to pull from
 
-  // if false then do not add those characters to the passPool
   if(wantsUppercase){
     passPool += uppercase;
-  } else {
-      passPool+='';
   }
 
-  if(lowercase){
+  if(wantsLowercase){
     passPool += lowercase;
-  } else{
-    passPool += ''
-  }
+  } 
 
-  if(specialCharacters){
+  if(wantsSpecialCharacters){
     passPool += specialCharacters;
-  } else {
-    passPool += '';
   }
 
   if(wantsNumbs){
     passPool += numbers;
-  } else {
-    passPool += '';
   }
 
   // select characters from pool and assign to passwordResult until length is reached
 let passwordResult ='';
   for(var i = 0; i < length; i++){
-    passwordResult += passPool[Math.floor(Math.random() * (85-1) +1)];
+    passwordResult += passPool[Math.floor(Math.random() * (passPool.length-1) +1)];
   }
   
   return passwordResult;
